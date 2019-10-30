@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+{# The method value 'GET' is meaning, GO TO any url (getting information) #}
+{# The method value 'POST' is used to store data in the backend (save information) #}
+
+<form action='.' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+</form>
+
+{% endblock %}

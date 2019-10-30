@@ -1,0 +1,31 @@
+{% extends 'configurator/base.html'  %}
+
+{% block content %}
+
+<h2>This is the Instance View.</h2>
+
+<form action='.' method='POST'>{% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Save' />
+</form>
+
+
+{# THIS STILL DOESNT WORK I CANT ACCESS THE CHOSEN VALUE #}
+
+<p>Variable Test Start</p>
+{{ request.get }}
+<p>Variable Test End</p>
+
+
+{% if context.form == OPC %}
+    <p>The chosen one is OPC</p>
+{% elif context.form == IALARM %}
+    <p>The chosen one is IALARM</p>
+{% elif context.form == REPLICATOR %}
+    <p>The chosen one is REPLICATOR</p>
+{% else %}
+    <p>This didnt work</p>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h1>Hello, Template</h1>
+<p>this is a contact for {{ request.user }}</p>
+
+<h3>{{ title|capfirst|upper }}</h3>
+
+{# Filters in DTL are something like methods #} 
+{#  you can use on context variables #}
+{#  you can use multiple filters at once #}
+{{ my_html|safe }}
+
+<p>
+{# This is called a context variable {{}} #}
+{# Access it by using the dictionary-key of the context (in 'def x_view())' #}
+
+{{ title }}, {{ my_number }}
+{{ my_list }}
+
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+<ul>
+
+{# for loops work as in python, but needs a closing #}
+
+{% for abc in my_list %}
+    {% if abc == 80085 %}
+        {# '|add:22' is a filter #}
+        <li>{{ forloop.counter }}: {{ abc|add:22 }}</li>   
+    {% elif abc == "Yoda" %}
+        <li>Not Yoda, this is.</li>    
+    {% else %}
+        {# you can access different attributes of the forloop #}
+        <li>{{ forloop.counter }}: {{ abc }}</li>   
+    {% endif %}
+
+{% endfor %}
+</ul>
+{% endblock content %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>{% if object.comment != None and object.comments != '' %}{{ object.comments }}{% else %}No comment here.{% endif %}</p>
+
+{{ object.age }}
+
+{% endblock %}

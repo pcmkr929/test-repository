@@ -1,0 +1,38 @@
+{# This is the root page #}
+
+<!doctype html>
+<html>
+<head>
+    <title>Coding for Till who tries Django</title>
+</head>
+<body bgcolor="#AAAAAA">
+
+    {# With the include, you can load an other .html page into #}
+    {# The 'base.html', so if you want to make a change e.g. at the #}
+    {# Navigation bar, you just have to go to the 'navbar.html' and change #}
+    {# it there. This way, all .html documents inherit the 'navbar.html' #}
+
+    {% include 'navbar.html' %}
+
+    <p>This is standard</p>
+
+    {# You need the block content tag in the inherited html page too #}
+    {# Stuff inside this block tag is individual, the structure is taken #}
+    {# From this base.html file #}
+    {# This whole concept is called 'template inheritance' #}
+    {# The names must fit (in this case 'content') #}
+<div>
+    {% block content %}
+    replace me
+    {% endblock %}
+</div>
+
+
+    {# % block another_content % #}
+    {# replace me #}
+    {# % endblock % #}
+
+
+
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+</style>
+</head>
+
+
+<body>
+<h1>Configuration Tool for the 'SPS-Connector'</h1>
+
+<nav>
+    <ul>
+      <li><a href="/configurator/instance/" id="instance">Instance</a></li>
+      <li><a href="/configurator/mqtt/" id="mqtt">MQTT</a></li>
+      <li><a href="/configurator/sql/" id="sql">SQL</a></li>
+      <li><a href="/configurator/basicconf/" id="basic">Basic Configuration</a></li>
+      <li><a href="/configurator/filesharelog/" id="filesharelog">Fileshare + Logging</a></li>
+    </ul>
+</nav>
+
+<div>
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+</body>
+</html>

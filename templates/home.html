@@ -1,0 +1,18 @@
+{# The 'extends' tag tells this document, that it should take its template #}
+{# from the 'base.html' file.  #}
+
+{% extends 'base.html' %}
+
+
+{# Everything is taken from base.html, but the stuff inside the block #}
+{#  content tag depends on the individual file #}
+
+{% block content %}
+
+<h1>Hello, Template</h1>
+{{ request.user.is_authenticated }}
+{{ request.user }}
+<p>this is a world</p>
+
+{% endblock %}
+
